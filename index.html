@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2a0f5c">
+  <meta name="description" content="Aprende la introducción de Visión de Águila de Nancy Ramírez, nota por nota, con un piano interactivo y sin partituras.">
+  <title>Visión de Águila | Aprende la introducción · Musicala</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Musicala, ir al inicio del aplicativo">
+        <img class="brand-logo" src="assets/logo.png" alt="Musicala" width="140" height="84">
+      </a>
+      <div class="topbar-meta"><span class="mini-spark" aria-hidden="true">✦</span> Mi primera melodía al piano</div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> APRENDIZAJE DESDE CERO <span class="eyebrow-divider">·</span> INTRODUCCIÓN</div>
+          <h1 id="page-title">Visión de <span>Águila</span><span class="hero-star" aria-hidden="true">✳</span></h1>
+          <p class="song-author">Nancy Ramírez</p>
+          <p class="hero-description">Vamos a aprender las primeras notas de la canción, una por una. Solo necesitas mirar, escuchar y explorar el piano. <strong>Sin partituras y sin afán.</strong></p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <span class="visual-orb orb-one"></span><span class="visual-orb orb-two"></span>
+          <span class="orbit orbit-large"></span><span class="orbit orbit-small"></span>
+          <span class="floating-note note-one">♪</span><span class="floating-note note-two">♫</span><span class="floating-note note-three">♬</span>
+          <div class="visual-pill"><span>♪</span> 11 notas para comenzar</div>
+        </div>
+      </section>
+
+      <section class="lesson-layout">
+        <div class="primary-column">
+          <section class="surface phrase-surface" aria-labelledby="sequence-title">
+            <div class="section-heading">
+              <div><p class="section-kicker">01 / CONOCE LA MELODÍA</p><h2 id="sequence-title">Así empieza la canción</h2></div>
+              <span class="subtle-badge">3 partes corticas</span>
+            </div>
+            <p class="muted lead-in">Lee las notas de izquierda a derecha. Toca cualquiera para encontrarla en el piano que está siempre abajo.</p>
+            <div class="phrases" id="phrases" role="group" aria-label="Notas de la introducción"></div>
+            <div class="playback-row">
+              <button class="btn btn-primary" id="play-all" type="button"><span aria-hidden="true" class="btn-glyph">▶</span><span class="play-label">Escuchar las 11 notas</span></button>
+              <button class="btn btn-secondary" id="play-phrase" type="button"><span aria-hidden="true">♫</span> Escuchar esta parte</button>
+              <label class="pace-label" for="pace">Velocidad
+                <select id="pace" aria-label="Velocidad para escuchar las notas">
+                  <option value="45">Lento (45)</option>
+                  <option value="60" selected>Balada (60)</option>
+                  <option value="75">Más fluido (75)</option>
+                </select>
+              </label>
+            </div>
+            <p class="footnote"><span aria-hidden="true">ⓘ</span> La reproducción sigue el <strong>ritmo real de la canción</strong>, como balada lenta a 60 pulsos por minuto.</p>
+          </section>
+
+          <section class="surface practice-surface" aria-labelledby="practice-title">
+            <div class="section-heading practice-header">
+              <div><p class="section-kicker">02 / AHORA TE TOCA</p><h2 id="practice-title">Una nota a la vez</h2></div>
+              <span class="count-pill" id="progress-label">0 de 11 encontradas</span>
+            </div>
+            <div class="mode-switch" role="group" aria-label="Modo de práctica">
+              <button type="button" id="mode-guided" class="mode-btn is-active" aria-pressed="true">✦ Con ayuda</button>
+              <button type="button" id="mode-challenge" class="mode-btn" aria-pressed="false">◉ Sin pistas</button>
+            </div>
+            <div class="trainer">
+              <div class="trainer-main">
+                <p class="step-indicator" id="step-indicator">NOTA 1 DE 11</p>
+                <div class="target-line"><span class="target-note" id="target-note">Re♯</span><button class="sound-btn" type="button" id="listen-current" aria-label="Escuchar la nota actual" title="Escuchar esta nota"><svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5a10 10 0 0 1 0 14"/></svg></button></div>
+                <p class="target-full-name" id="target-full-name">Re sostenido</p>
+                <p class="note-description" id="note-description">Es una tecla negra. Está entre Re y Mi, y es la segunda del grupo de dos teclas negras.</p>
+                <p class="answer-message" id="answer-message" role="status" aria-live="polite">Busca la tecla iluminada en el piano y tócala.</p>
+              </div>
+              <div class="trainer-nav">
+                <button class="round-arrow" id="previous" type="button" aria-label="Nota anterior" title="Nota anterior">←</button>
+                <button class="btn btn-next" id="next" type="button">Siguiente nota <span aria-hidden="true">→</span></button>
+              </div>
+            </div>
+            <div class="progress-dots" id="progress-dots" aria-label="Progreso en las once notas"></div>
+            <div class="end-actions"><button id="reset" type="button" class="link-button"><span aria-hidden="true">↺</span> Empezar de nuevo</button><span class="small-encouragement">Equivocarse también es practicar ♡</span></div>
+          </section>
+        </div>
+
+        <div class="secondary-column">
+          <section class="surface learn-surface" aria-labelledby="sharp-title">
+            <p class="section-kicker">UNA EXPLICACIÓN FÁCIL</p>
+            <div class="explainer-icon" aria-hidden="true">♯</div>
+            <h2 id="sharp-title">¿Qué es un sostenido?</h2>
+            <p>Es este símbolo: <strong class="violet">♯</strong> (se dice <em>«sostenido»</em>). Indica que tocamos una nota <strong>un pasito más arriba</strong>, es decir, un semitono hacia la derecha en el piano.</p>
+            <div class="definition-card"><span class="comparison-note">Re</span><span class="tiny-arrow" aria-hidden="true">→</span><span class="comparison-note sharp-pill">Re♯</span><span class="definition-small">Un semitono a la derecha</span></div>
+            <p>En esta introducción aparecen tres sostenidos. Los tres son <strong>teclas negras:</strong></p>
+            <div class="sharp-list">
+              <button class="sharp-entry" type="button" data-focus="63"><span class="sharp-entry-left"><span class="black-key-icon" aria-hidden="true"></span><span><strong>Re♯</strong><small>Entre Re y Mi · grupo de 2</small></span></span><span aria-hidden="true" class="entry-arrow">↗</span></button>
+              <button class="sharp-entry" type="button" data-focus="66"><span class="sharp-entry-left"><span class="black-key-icon" aria-hidden="true"></span><span><strong>Fa♯</strong><small>Entre Fa y Sol · grupo de 3</small></span></span><span aria-hidden="true" class="entry-arrow">↗</span></button>
+              <button class="sharp-entry" type="button" data-focus="68"><span class="sharp-entry-left"><span class="black-key-icon" aria-hidden="true"></span><span><strong>Sol♯</strong><small>Entre Sol y La · grupo de 3</small></span></span><span aria-hidden="true" class="entry-arrow">↗</span></button>
+            </div>
+            <div class="gentle-tip"><span class="tip-emoji" aria-hidden="true">💡</span><p><strong>Truco:</strong> las teclas negras forman grupos de <strong>dos</strong> y de <strong>tres</strong>. Esas formas te ayudan a orientarte sin tener que contar todas las teclas.</p></div>
+          </section>
+          <section class="surface mini-help" aria-labelledby="how-title">
+            <p class="section-kicker">POR DÓNDE EMPEZAR</p><h2 id="how-title">Tu mini ruta</h2>
+            <ol><li><strong>Mira</strong> la primera nota, Re♯.</li><li><strong>Busca</strong> su tecla iluminada en el piano.</li><li><strong>Tócala</strong> para escucharla y avanzar.</li><li>Cuando te sientas listo, prueba <strong>Sin pistas</strong>.</li></ol>
+          </section>
+        </div>
+      </section>
+      <p class="footer-copy">Hecho para aprender con calma · Musicala <span aria-hidden="true">♡</span></p>
+    </main>
+  </div>
+
+  <aside class="piano-dock" aria-label="Piano interactivo siempre visible">
+    <div class="piano-dock-inner">
+      <div class="dock-info">
+        <div class="dock-title"><span class="live-indicator"></span><span>Tu piano</span><span class="dock-suffix">interactivo</span></div>
+        <div class="dock-note"><span class="dock-current" id="dock-current">Re♯</span><span class="dock-name" id="dock-name">tecla negra</span></div>
+        <p id="keyboard-guidance" class="keyboard-guidance">La tecla violeta muestra qué nota buscar.</p>
+      </div>
+      <div class="keyboard-wrap">
+        <div id="keyboard" class="keyboard" role="group" aria-label="Piano de Do a Do con teclas blancas y negras"></div>
+        <div class="keyboard-bottom"><span>DO</span><span class="keyboard-middle-label">Un grupo de 2 negras <strong>·</strong> Un grupo de 3 negras</span><span>DO</span></div>
+      </div>
+    </div>
+  </aside>
+  <div class="sr-only" id="live-announcement" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
